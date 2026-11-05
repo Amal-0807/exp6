@@ -1,9 +1,14 @@
 // pubspec.yaml -> dependencies:  sqflite: ^2.3.3   path: ^1.9.0
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 
-void main() => runApp(const StudentApp());
+void main() {
+  if (kIsWeb) databaseFactory = databaseFactoryFfiWeb; // sqflite in Chrome
+  runApp(const StudentApp());
+}
 
 class StudentApp extends StatelessWidget {
   const StudentApp({super.key});

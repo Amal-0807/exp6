@@ -1,4 +1,19 @@
-# Experiment 6
+# exp6
+
+Flutter experiment 6 - a student records app using a local SQLite database (sqflite).
+
+## Use
+
+```
+flutter pub add exp6
+```
+
+```dart
+import 'package:exp6/exp6.dart';
+
+runApp(const StudentApp());
+```
+
 
 ## Run in VS Code
 1. Open this folder in VS Code (File > Open Folder).
